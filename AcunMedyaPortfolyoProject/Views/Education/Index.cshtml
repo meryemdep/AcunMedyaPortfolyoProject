@@ -1,0 +1,55 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.Education>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}               
+
+<h2>Education</h2>
+<div class="container">
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>Education ID</th>
+                <th>Start Year</th>
+                <th>End Year</th>
+                <th>School Name</th>
+                <th>Description</th>
+                <th>Major</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EducationID</td>
+                    <td><span class="badge bg-primary">@item.StartYear</span></td>
+                    <td><span class="badge bg-secondary">@item.EndYear</span></td>
+                    <td class="text-start">@item.Name</td>
+                    <td class="text-start">@item.Description</td>
+                    <td class="fw-bold">@item.Major</td>
+                    <td>
+                        <a href="#" class="btn text-white" style="background-color: #8B0000; border-radius: 20px; padding: 5px 15px;">
+                            🔄 Update
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Education/DeleteEducation/@item.EducationID" class="btn btn-dark rounded-pill px-3">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Education/CreateEducation/" class="btn text-white shadow-sm mt-3"
+       style="background-color: #800020; border-radius: 25px; padding: 10px 20px; font-weight: bold;">
+        ➕ Add
+    </a>
+
+</div>
+
+
+

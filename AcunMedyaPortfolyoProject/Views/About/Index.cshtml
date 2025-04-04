@@ -1,0 +1,57 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>About</h2>
+<div class="container">
+    <table class="table table-hover table-striped align-middle shadow-sm rounded">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>AboutID</th>
+                <th>ImageUrl</th>
+                <th>Degree</th>
+                <th>Description</th>
+                <th>Description2</th>
+                <th>City</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Freelance</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var item in Model)
+            {
+                <tr >
+                    <td>@item.AboutID</td>
+                    <td><img src="@item.ImageUrl" alt="Skill Image" width="50" height="50" class="rounded-circle border"></td>
+                    <td>@item.Degree</td>
+                    <td class="text-start" style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.Decription1</td>
+                    <td class="text-start" style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.Decription2</td>
+                    <td>@item.City</td>
+                    <td>@item.Age</td>
+                    <td>@item.Email</td>
+                    <td>@item.Freelance</td>
+                    <td><a href="#" class="btn text-white rounded-pill px-3" style="background-color: #8B0000;">
+                        🔄Update
+                    </a></td>
+                    <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-sm btn-danger rounded-pill px-3">🗑️Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/About/CreateAbout/" class="btn text-white shadow-sm mt-3"
+       style="background-color: #800020; border-radius: 25px; padding: 10px 20px; font-weight: bold;">
+        ➕ Add
+    </a>
+
+
+</div>
+
+
+
+

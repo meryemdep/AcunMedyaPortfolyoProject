@@ -1,0 +1,45 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.CategoryTbl>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Burası Kategori Sayfası</h2>
+<div class="container">
+
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>Category ID</th>
+                <th>Category Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.CategoryID</td>
+                    <td >@item.CategoryName</td>
+                    <td>
+                        <a href="#" class="btn text-white" style="background-color: #8B0000; border-radius: 20px; padding: 5px 15px;">
+                            🔄 Update
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-dark rounded-pill px-3">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <a href="/Category/CreateCategory/" class="btn text-white shadow-sm mt-3"
+       style="background-color: #800020; border-radius: 25px; padding: 10px 20px; font-weight: bold;">
+        ➕ Add
+    </a>
+    </div>

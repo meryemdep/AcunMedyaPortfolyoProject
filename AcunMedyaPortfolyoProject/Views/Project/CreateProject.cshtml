@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Creating Projects</h2>
+<form method="post" enctype="multipart/form-data" class="p-4 shadow rounded-3 bg-white">
+    <div class="mb-3">
+        <label for="projectName" class="form-label">Project Name</label>
+        <input type="text" class="form-control" name="ProjectName" placeholder="Enter project name">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Project Description</label>
+        <input class="form-control" name="Description" rows="3" placeholder="Enter project description">
+    </div>
+    <div class="mb-3">
+        <label for="projectLink" class="form-label">Project Link</label>
+        <input type="url" class="form-control" name="ProjectLink" placeholder="Enter project URL">
+    </div>
+    <div class="mb-3">
+        <label for="categoryID" class="form-label">Category ID</label>
+        <input type="text" class="form-control" name="CategoryID"  placeholder="Enter category ID">
+    </div>
+    <div class="mb-3">
+        <label for="image1" class="form-label">Project Image 1</label>
+        <input type="text" class="form-control" name="Image1">
+    </div>
+    <div class="mb-3">
+        <label for="image2" class="form-label">Project Image 2</label>
+        <input type="text" class="form-control" name="Image2">
+    </div>
+    <div class="mb-3">
+        <label for="image3" class="form-label">Project Image 3</label>
+        <input type="text" class="form-control" name="Image3">
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Save Project</button>
+</form>

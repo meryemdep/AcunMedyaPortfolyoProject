@@ -1,0 +1,51 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.References>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>References</h2>
+<div class="container">
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>Reference ID</th>
+                <th>Description</th>
+                <th>Reference Name</th>
+                <th>Description 2</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>@item.ReferenceID</td>
+                    <td class="text-start">@item.Description1</td>
+                    <td class="fw-bold">@item.ReferenceName</td>
+                    <td class="text-start">@item.Description2</td>
+                    <td>
+                        <img src="@item.ImageUrl" class="img-thumbnail bg-light" width="80" alt="Reference Image">
+                    </td>
+                    <td>@item.Title</td>
+                    <td>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                            🔄 Update
+                        </a>
+                        <a href="/References/DeleteReferences/@item.ReferenceID" class="btn btn-outline-danger btn-sm rounded-pill px-3">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/References/CreateReferences/" class="btn text-white shadow-sm mt-3"
+       style="background-color: #800020; border-radius: 25px; padding: 10px 20px; font-weight: bold;">
+        ➕ Add
+    </a>
+
+</div>
+

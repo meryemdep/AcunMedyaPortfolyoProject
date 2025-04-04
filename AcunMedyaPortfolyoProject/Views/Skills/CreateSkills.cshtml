@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "CreateSkills";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Creating Skills</h2>
+<form method="post" enctype="multipart/form-data" class="p-4 shadow rounded-3 bg-white">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="SkillName" placeholder="Enter skill's name'">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input class="form-control" name="Percentage" rows="3" placeholder="Enter percentage"
+    </div>
+    <div class="mb-3">
+        <label for="description2" class="form-label">Additional Description</label>
+        <input class="form-control" name="Description" rows="3" placeholder="Enter description">
+    </div>
+    <button type="submit" class="btn btn-primary w-100">💾 Save Service</button>
+</form>
+
+

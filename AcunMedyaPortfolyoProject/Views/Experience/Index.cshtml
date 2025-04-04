@@ -1,0 +1,53 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.Experience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Experience</h2>
+<div class="container">
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>Job ID</th>
+                <th>Title</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Company Name</th>
+                <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.JobID</td>
+                    <td class="fw-bold">@item.Title</td>
+                    <td><span class="badge bg-success">@item.StartDate</span></td>
+                    <td><span class="badge bg-danger">@item.EndDate</span></td>
+                    <td class="text-start">@item.CompanyName</td>
+                    <td class="text-start">@item.Description</td>
+                    <td>
+                        <a href="#" class="btn text-white" style="background-color: #8B0000; border-radius: 20px; padding: 5px 15px;">
+                            🔄 Update
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Experience/DeleteExperience/@item.JobID" class="btn btn-dark rounded-pill px-3">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Experience/CreateExperience/" class="btn text-white shadow-sm mt-3"
+       style="background-color: #800020; border-radius: 25px; padding: 10px 20px; font-weight: bold;">
+        ➕ Add 
+    </a>
+
+</div>
+

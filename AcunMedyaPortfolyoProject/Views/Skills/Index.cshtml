@@ -1,0 +1,50 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.Skills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<h2>Index</h2>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="text-center">
+                <th>Skill ID</th>
+                <th>Skill Name</th>
+                <th>Percentage</th>
+                <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>@item.SkillID</td>
+                    <td class="fw-bold">@item.SkillName</td>
+                    <td>@item.Percentage%</td>
+
+                    <td class="text-start">@item.Description</td>
+                    <td>
+                        <a href="#" class="btn text-white" style="background-color: #8B0000; border-radius: 20px; padding: 5px 15px;">
+                            🔄 Update
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/Skills/DeleteSkills/@item.SkillID" class="btn btn-outline-danger btn-sm rounded-pill px-3">
+                            🗑️ Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Skills/CreateSkills/" class="btn text-white shadow-sm mt-3"
+       style="background-color: #800020; border-radius: 25px; padding: 10px 20px; font-weight: bold;">
+        ➕ Add
+    </a>
+
+</div>
+
+
