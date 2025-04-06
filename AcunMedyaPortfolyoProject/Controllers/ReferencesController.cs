@@ -35,5 +35,25 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult UpdateReferences(int id)
+        {
+            var values = db.References.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateReferences(References model)
+        {
+            var value = db.References.Find(model.ReferenceID);
+            value.Description1 = model.Description1;
+            value.ReferenceName = model.ReferenceName; 
+            value.Description2 = model.Description2;  
+            value.ImageUrl = model.ImageUrl;
+            value.Title = model.Title;  
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

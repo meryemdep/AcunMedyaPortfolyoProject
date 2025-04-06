@@ -1,0 +1,14 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.Education>
+
+<h3 class="resume-title">Education</h3>
+<div class="resume-item">
+    @foreach (var item in Model)
+    {
+        <h4>@item.Major</h4>
+        <h5>2023 - 2026</h5>
+        <p><em>@item.Name</em></p>
+        <p>@item.Description</p>
+    }
+
+</div><!-- Edn Resume Item -->
+</div>

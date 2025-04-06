@@ -1,0 +1,48 @@
+﻿@model AcunMedyaPortfolyoProject.Models.Projectpart
+@{
+    ViewBag.Title = "UpdateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>UpdateProject</h2>
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ImageUrl" class="form-label">Project's Name</label>
+            @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control", placeholder = "Enter project name" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Age" class="form-label">Description</label>
+            @Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "Enter description" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Degree" class="form-label">Link</label>
+            @Html.TextBoxFor(x => x.ProjectLink, new { @class = "form-control", placeholder = "project's link" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Freelance" class="form-label">Image1</label>
+            @Html.TextBoxFor(x => x.Image1, new { @class = "form-control", placeholder = "ımage1" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Email" class="form-label">Image2</label>
+            @Html.TextBoxFor(x => x.Image2, new { @class = "form-control", placeholder = "ımage2" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Phone" class="form-label">Image3</label>
+            @Html.TextBoxFor(x => x.Image3, new { @class = "form-control", placeholder = "ımage3" })
+        </div>
+
+       
+
+        @Html.HiddenFor(x => x.ProjectID)
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+﻿@model  List<AcunMedyaPortfolyoProject.Models.Skills>
+<!-- Skills Section -->
+<section id="team" class="skills section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Continuously building a diverse range of skills to adapt and thrive in different professional contexts.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+            <div class="row">
+                @{
+                    var items = Model.ToList(); // Model'i bir listeye çeviriyoruz
+                    int groupSize = 3; // Her grupta 3 veri olacak
+                    int groupCount = (int)Math.Ceiling((double)items.Count / groupSize); // Grup sayısını hesaplıyoruz
+                }
+
+                @for (int i = 0; i < groupCount; i++)
+                {
+                    <div class="col-lg-4">
+                        @foreach (var item in items.Skip(i * groupSize).Take(groupSize))
+                        {
+                            <div class="progress">
+                                <span class="skill"><span>@item.SkillName</span> <i class="val">@item.Percentage%</i></span>
+                                <div class="progress-bar-wrap">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+
+                <!-- Scroll butonu en sona, row dışında -->
+            </div>
+            <a href="#team"></a>
+
+        </div>
+    </div>
+
+
+
+</section><!-- /Skills Section -->

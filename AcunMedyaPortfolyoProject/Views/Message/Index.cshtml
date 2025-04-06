@@ -6,14 +6,16 @@
 
 <h2>Messages</h2>
 <div class="container">
-    <table class="table table-bordered">
-        <thead>
+    <table class="table table-hover table-striped align-middle shadow-sm rounded">
+        <thead class="table-dark text-center">
             <tr>
                 <th>MessageID</th>
                 <th>NameSurname</th>
                 <th>Mail</th>
                 <th>Subject</th>
                 <th>MessageContent</th>
+                <th>Update button</th>
+                <th>Delete button</th>
 
             </tr>
         </thead>
@@ -27,8 +29,12 @@
                     <td>@item.Mail</td>
                     <td>@item.Subject</td>
                     <td>@item.MessageContent</td>
-                    <td><a href="#" class="btn btn-danger">Güncelle</a></td>
-                    <td><a href="#" class="btn btn-dark">Sil</a></td>
+                    <td>
+                        <a href="/Message/UpdateMessage/@item.MessageID" class="btn text-white rounded-pill px-3" style="background-color: #8B0000;">
+                            🔄Update
+                        </a>
+                    </td>
+                    <td><a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-sm btn-danger rounded-pill px-3">🗑️Delete</a></td>
                 </tr>
             }
         </tbody>

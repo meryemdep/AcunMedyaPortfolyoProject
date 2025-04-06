@@ -35,6 +35,27 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();   
             return RedirectToAction("Index");  
         }
+        [HttpGet]
+        public ActionResult UpdateContacts(int id)
+        {
+            var values = db.Contacts.Find(id);
+            return View(values);
+        
+        }
+        [HttpPost]
+        public ActionResult UpdateContacts(Contacts model)
+        {
+            var value = db.Contacts.Find(model.ContactID); 
+            value.Description = model.Description;
+            value.Adress = model.Adress;
+            value.Email = model.Email;
+            value.Phone = model.Phone;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+
 
     }
 }

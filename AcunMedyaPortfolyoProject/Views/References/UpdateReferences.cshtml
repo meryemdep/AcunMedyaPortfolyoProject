@@ -1,0 +1,39 @@
+﻿@model AcunMedyaPortfolyoProject.Models.References
+@{
+    ViewBag.Title = "UpdateReferences";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>UpdateReferences</h2>
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ImageUrl" class="form-label">Project's Name</label>
+            @Html.TextBoxFor(x => x.Description1, new { @class = "form-control", placeholder = "Enter description" })
+        </div>    
+
+        <div class="col-md-6 mb-3">
+            <label for="Degree" class="form-label">Link</label>
+            @Html.TextBoxFor(x => x.ReferenceName, new { @class = "form-control", placeholder = "references name" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Age" class="form-label">Description</label>
+            @Html.TextBoxFor(x => x.Description2, new { @class = "form-control", placeholder = "Enter description" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Freelance" class="form-label">Image1</label>
+            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", placeholder = "ımage1" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Email" class="form-label">Image2</label>
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "enter the title" })
+        </div>
+        @Html.HiddenFor(x => x.ReferenceID)
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </div>
+    </div>
+</form>
+

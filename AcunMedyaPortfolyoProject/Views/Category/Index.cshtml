@@ -7,7 +7,7 @@
 <h2>Burası Kategori Sayfası</h2>
 <div class="container">
 
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded">
+    <table class="table table-hover table-striped align-middle shadow-sm rounded">
         <thead class="table-dark text-center">
             <tr>
                 <th>Category ID</th>
@@ -21,9 +21,9 @@
             {
                 <tr>
                     <td>@item.CategoryID</td>
-                    <td >@item.CategoryName</td>
+                    <td>@item.CategoryName</td>
                     <td>
-                        <a href="#" class="btn text-white" style="background-color: #8B0000; border-radius: 20px; padding: 5px 15px;">
+                        <a href="/Category/UpdateCategory/@item.CategoryID" class="btn text-white" style="background-color: #8B0000; border-radius: 20px; padding: 5px 15px;">
                             🔄 Update
                         </a>
                     </td>

@@ -1,0 +1,26 @@
+﻿@model List<AcunMedyaPortfolyoProject.Models.About>
+
+<section id="resume" class="resume section light-background">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>A driven and adaptable individual with a solid educational background and growing hands-on experience in the tech field.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="resume-title">Sumary</h3>
+
+                <div class="resume-item pb-0">
+                    <h4>Meryem Angi</h4>
+                    <p><em>@Model[0].Decription1</em></p>
+                    <ul>
+                        <li>@Model[0].City</li>
+                        <li>@Model[0].Phone</li>
+                        <li>@Model[0].Email</li>
+                    </ul>
+                </div><!-- Edn Resume Item -->

@@ -1,0 +1,63 @@
+﻿@model AcunMedyaPortfolyoProject.Models.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ImageUrl" class="form-label">Image URL</label>
+            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", placeholder = "Enter image URL" })
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="ImageUrl" class="form-label">Image URL</label>
+            @Html.TextBoxFor(x => x.BirthDay, new { @class = "form-control", placeholder = "Enter the birthday" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Age" class="form-label">Age</label>
+            @Html.TextBoxFor(x => x.Age, new { @class = "form-control", placeholder = "Enter your age" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Degree" class="form-label">Degree</label>
+            @Html.TextBoxFor(x => x.Degree, new { @class = "form-control", placeholder = "Your degree" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Freelance" class="form-label">Freelance</label>
+            @Html.TextBoxFor(x => x.Freelance, new { @class = "form-control", placeholder = "Available / Not Available" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Email" class="form-label">Email</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", type = "email", placeholder = "you@example.com" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Phone" class="form-label">Phone</label>
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", placeholder = "+90..." })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="City" class="form-label">City</label>
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "Where do you live?" })
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label for="Decription1" class="form-label">Description 1</label>
+            @Html.TextBoxFor(x => x.Decription1, new { @class = "form-control", placeholder = "Short description..." })
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label for="Decription2" class="form-label">Description 2</label>
+            @Html.TextBoxFor(x => x.Decription2, new { @class = "form-control", placeholder = "Another description..." })
+        </div>
+
+        @Html.HiddenFor(x => x.AboutID)
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,40 @@
+﻿@model AcunMedyaPortfolyoProject.Models.Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>UpdateEducation</h2>
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ImageUrl" class="form-label">start date</label>
+            @Html.TextBoxFor(x => x.StartYear, new { @class = "form-control", placeholder = "Enter start year" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Age" class="form-label">end date</label>
+            @Html.TextBoxFor(x => x.EndYear, new { @class = "form-control", placeholder = "Enter your end date" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Degree" class="form-label">schools name</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Your school's name" })
+        </div>
+        <div class="col-md-12 mb-3">
+            <label for="Decription1" class="form-label">major</label>
+            @Html.TextBoxFor(x => x.Major, new { @class = "form-control", placeholder = "your major" })
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label for="Decription2" class="form-label">Description </label>
+            @Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "description..." })
+        </div>
+
+        @Html.HiddenFor(x => x.EducationID)
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </div>
+    </div>
+</form>

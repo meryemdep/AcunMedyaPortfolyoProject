@@ -35,6 +35,24 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult UpdateServices(int id)
+        {
+            var values = db.ServicesPart.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateServices(ServicesPart model)
+        {
+            var value = db.ServicesPart.Find(model.ServicesID);
+            value.Description = model.Description;
+            value.Title = model.Title;
+            value.IconUrl = model.IconUrl;
+            value.Description2 = model.Description2;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
 
     }
 }

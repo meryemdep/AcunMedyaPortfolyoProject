@@ -1,0 +1,45 @@
+﻿@model AcunMedyaPortfolyoProject.Models.Experience
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>UpdateExperience</h2>
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="ImageUrl" class="form-label">title</label>
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "Enter the title" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Age" class="form-label">starting date</label>
+            @Html.TextBoxFor(x => x.StartDate, new { @class = "form-control", placeholder = "Enter your starting date" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Degree" class="form-label">end date</label>
+            @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control", placeholder = "enter your ending date" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Freelance" class="form-label">companys name</label>
+            @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control", placeholder = "enter the company's name" })
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Email" class="form-label">description</label>
+            @Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "enter the description" })
+        </div>
+
+
+        
+
+        @Html.HiddenFor(x => x.JobID)
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </div>
+    </div>
+</form>

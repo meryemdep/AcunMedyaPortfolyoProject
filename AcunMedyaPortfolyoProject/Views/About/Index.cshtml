@@ -10,7 +10,9 @@
         <thead class="table-dark text-center">
             <tr>
                 <th>AboutID</th>
+                <th>Birthdate</th>
                 <th>ImageUrl</th>
+                <th>Title</th>
                 <th>Degree</th>
                 <th>Description</th>
                 <th>Description2</th>
@@ -25,9 +27,11 @@
         <tbody class="text-center">
             @foreach (var item in Model)
             {
-                <tr >
+                <tr>
                     <td>@item.AboutID</td>
+                    <td>@item.BirthDay</td>
                     <td><img src="@item.ImageUrl" alt="Skill Image" width="50" height="50" class="rounded-circle border"></td>
+                    <td>@item.Title</td>
                     <td>@item.Degree</td>
                     <td class="text-start" style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.Decription1</td>
                     <td class="text-start" style="max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@item.Decription2</td>
@@ -35,9 +39,11 @@
                     <td>@item.Age</td>
                     <td>@item.Email</td>
                     <td>@item.Freelance</td>
-                    <td><a href="#" class="btn text-white rounded-pill px-3" style="background-color: #8B0000;">
-                        🔄Update
-                    </a></td>
+                    <td>
+                        <a href="/About/UpdateAbout/@item.AboutID" class="btn text-white rounded-pill px-3" style="background-color: #8B0000;">
+                            🔄Update
+                        </a>
+                    </td>
                     <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-sm btn-danger rounded-pill px-3">🗑️Delete</a></td>
                 </tr>
             }

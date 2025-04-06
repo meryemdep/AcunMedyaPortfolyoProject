@@ -36,6 +36,21 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");   
         }
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            var values = db.CategoryTbl.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateCategory(CategoryTbl model)
+        {
+            var value = db.CategoryTbl.Find(model.CategoryID);
+            value.CategoryName = model.CategoryName;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
 
     }
 }

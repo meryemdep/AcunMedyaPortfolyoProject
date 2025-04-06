@@ -16,5 +16,29 @@ namespace AcunMedyaPortfolyoProject.Controllers
             var values = db.Message.ToList();
             return View(values);
         }
+        public ActionResult DeleteMessage(int id)
+        {
+            var values = db.Message.Find(id);
+            db.Message.Remove(values);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult UpdateMessage(int id)
+        {
+            var values = db.Message.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateMessage(Message message)
+        {
+            var value = db.Message.Find(message.MessageID);
+            value.NameSurname = message.NameSurname;
+            value.Mail = message.Mail;
+            value.Subject = message.Subject;    
+            value.MessageContent = message.MessageContent;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

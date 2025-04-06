@@ -35,5 +35,23 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult UpdateSkills(int id)
+        {
+            var values = db.Skills.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateSkills(Skills model)
+        {
+            var value = db.Skills.Find(model.SkillID);
+            value.SkillName = model.SkillName;
+            value.Percentage = model.Percentage;
+            value.Description = model.Description;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

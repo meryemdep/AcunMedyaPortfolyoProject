@@ -35,5 +35,25 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");   
         }
+        [HttpGet]
+        public ActionResult UpdateExperience(int id)
+        {
+            var values = db.Experience.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateExperience(Experience model)
+        {
+            var value = db.Experience.Find(model.JobID);
+            value.Title = model.Title;
+            value.StartDate = model.StartDate;
+            value.EndDate = model.EndDate;
+            value.CompanyName = model.CompanyName;
+            value.Description = model.Description;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

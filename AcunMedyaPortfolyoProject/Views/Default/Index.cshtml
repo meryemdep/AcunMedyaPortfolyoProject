@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "Default")
+<body class="index-page">
+
+    @Html.Action("PartialMenu", "Default")
+
+
+    <main class="main">
+
+        @Html.Action("PartialSlider1", "Default")
+        @Html.Action("PartialAbout", "Default")
+        @Html.Action("PartialSkills", "Default")
+        <!-- Resume Section -->
+        @Html.Action("PartialSummary", "Default")
+        @Html.Action("PartialEducation", "Default")
+        @Html.Action("PartialExperience", "Default")
+
+
+        <!-- Services Section -->
+        @Html.Action("PartialServices", "Default")
+        <!-- /Services Section -->
+        <!-- Portfolio Section -->
+        @Html.Action("PartialProjects", "Default")
+        <!-- /Portfolio Section -->
+        <!-- Testimonials Section -->
+        @Html.Action("PartialReferences", "Default")
+        <!-- /Testimonials Section -->
+        <!-- Contact Section -->
+        <section id="contact" class="contact section"style="background-color: #f2f6f9">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up" >
+                <h2>Contact</h2>
+                <p>Feel free to reach out for collaboration, questions, or opportunities.</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade" data-aos-delay="100">
+
+                <div class="row gy-4">
+
+                    @Html.Action("PartialContact", "Default")
+
+                    <div class="col-lg-8">
+                        @Html.Action("PartialMessage", "Default")
+
+                    </div>
+
+                    </div>
+
+                </div>
+
+        </section><!-- /Contact Section -->
+
+    </main>
+
+    @Html.Action("PartialFooter", "Default")
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    @Html.Action("PartialScript", "Default")
+
+</body>
+
+</html>

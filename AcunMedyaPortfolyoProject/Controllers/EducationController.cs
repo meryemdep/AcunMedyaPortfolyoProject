@@ -36,5 +36,25 @@ namespace AcunMedyaPortfolyoProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult UpdateEducation(int id)
+        {
+            var values = db.Education.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateEducation(Education model)
+        {
+            var value = db.Education.Find(model.EducationID);
+            value.StartYear = model.StartYear;
+            value.EndYear = model.EndYear;
+            value.Name = model.Name;    
+            value.Description  = model.Description; 
+            value.Major = model.Major; 
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
     }
 }
